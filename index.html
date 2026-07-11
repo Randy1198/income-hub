@@ -10,14 +10,10 @@
     <meta name="google-site-verification" content="tHZ68LAUwohZSEn3MLV3l-fP5ljM5eDKkdyCgOJ9WpU" />
 
     <!-- 🚨 PLACE YOUR ADSTERRA SOCIAL BAR SCRIPT TAG DIRECTLY BELOW THIS LINE -->
-    smart-link-3367644 ad tags
-Popunder
-Smartlink_1
-SMART LINK
-https://disintegratehesitate.com/ycep8j7etx?key=2f03aaf523a80ed390a722017a85b5b9
+    <!-- [Paste Social Bar Code Here] -->
 
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 30px 15px; color: #222; background: #f0f2f5; margin: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 30px 15px; color: #222; background: #f0f2f5; margin: 0; line-height: 1.6; }
         .container { max-width: 650px; margin: 0 auto; background: #fff; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
         h1 { font-size: 2.1em; color: #1a202c; margin-bottom: 5px; font-weight: 800; text-align: center; }
         .subtitle { color: #718096; text-align: center; margin-bottom: 30px; font-size: 1em; }
@@ -28,10 +24,13 @@ https://disintegratehesitate.com/ycep8j7etx?key=2f03aaf523a80ed390a722017a85b5b9
         .filters { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 25px; }
         .btn-solve { width: 100%; background: #3182ce; color: #fff; padding: 14px; font-size: 1.2em; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 12px rgba(49,130,206,0.3); transition: background 0.2s; }
         .btn-solve:hover { background: #2b6cb0; }
+        
+        /* Results Section styling */
         .results-box { margin-top: 30px; display: none; }
         .results-header { font-size: 1.2em; font-weight: 700; margin-bottom: 15px; border-bottom: 2px solid #edf2f7; padding-bottom: 8px; color: #2d3748; }
         .word-list { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
-        .word-item { background: #ebf8ff; color: #2b6cb0; padding: 8px 14px; border-radius: 6px; font-weight: 600; font-size: 1.05em; border: 1px solid #bee3f8; }
+        .word-item { background: #ebf8ff; color: #2b6cb0; padding: 8px 14px; border-radius: 6px; font-weight: 600; font-size: 1.05em; border: 1px solid #bee3f8; display: flex; gap: 8px; align-items: center; }
+        .word-score { background: #3182ce; color: white; font-size: 0.75em; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
         .no-results { color: #e53e3e; font-weight: 600; }
         
         /* Premium Monetization CTA Block */
@@ -40,6 +39,14 @@ https://disintegratehesitate.com/ycep8j7etx?key=2f03aaf523a80ed390a722017a85b5b9
         .promo-banner p { margin: 0 0 20px 0; font-size: 0.95em; opacity: 0.9; }
         .promo-btn { display: inline-block; background: #e74c3c; color: white; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 6px; box-shadow: 0 4px 10px rgba(231,76,60,0.4); transition: transform 0.2s; }
         .promo-btn:hover { transform: translateY(-1px); background: #c0392b; }
+
+        /* SEO Strategy Content Blocks */
+        .seo-content { margin-top: 50px; border-top: 2px solid #edf2f7; padding-top: 30px; color: #4a5568; }
+        .seo-section { margin-bottom: 30px; }
+        .seo-section h2 { font-size: 1.3em; color: #1a202c; font-weight: 700; margin-bottom: 10px; }
+        .seo-section p { font-size: 0.95em; margin: 0 0 10px 0; text-align: left; }
+        .seo-section ul { padding-left: 20px; font-size: 0.95em; }
+        .seo-section li { margin-bottom: 5px; }
     </style>
 </head>
 <body>
@@ -49,8 +56,8 @@ https://disintegratehesitate.com/ycep8j7etx?key=2f03aaf523a80ed390a722017a85b5b9
     <div class="subtitle">Decode jumbled letters into high-scoring Scrabble & Words with Friends solutions</div>
     
     <div class="input-group">
-        <label for="letters">Enter Your Letters (Use ? for blanks)</label>
-        <input type="text" id="letters" placeholder="e.g., oallm, tehas" autocomplete="off">
+        <label for="letters">Enter Your Letters (Use ? for blank tiles)</label>
+        <input type="text" id="letters" placeholder="e.g., oallm, jzaz, tehas" autocomplete="off">
     </div>
     
     <div class="filters">
@@ -66,6 +73,7 @@ https://disintegratehesitate.com/ycep8j7etx?key=2f03aaf523a80ed390a722017a85b5b9
             <label for="wordLength">Length</label>
             <select id="wordLength">
                 <option value="any">Any Length</option>
+                <option value="2">2 Letters</option>
                 <option value="3">3 Letters</option>
                 <option value="4">4 Letters</option>
                 <option value="5">5 Letters</option>
@@ -84,20 +92,58 @@ https://disintegratehesitate.com/ycep8j7etx?key=2f03aaf523a80ed390a722017a85b5b9
 
     <!-- SmartLink Monetization Fallback Layer -->
     <div class="promo-banner">
-        <h3>Need the Wordle Solution Instantly?</h3>
-        <p>Access our cloud computing backend database to cross-reference every active daily anagram dictionary path automatically.</p>
+        <h3>Looking for Today's Wordle Answer?</h3>
+        <p>Access our real-time global word tracking nodes to instantly bypass puzzle roadblocks and extract daily challenge variations.</p>
         <a href="https://www.effectivecpmnetwork.com/ycep8j7etx?key=2f03aaf523a80ed390a722017a85b5b9" target="_blank" class="promo-btn">
             ⚡ Open Master Dictionary Engine
         </a>
     </div>
+
+    <!-- 🌐 STRATEGIC GOOGLE SEO CONTENT BLOCKS -->
+    <div class="seo-content">
+        <div class="seo-section">
+            <h2>How to Use the Free Word Unscrambler</h2>
+            <p>Our online anagram solver makes it incredibly easy to find winning configurations for Scrabble, Words with Friends, and daily word puzzles. Simply input your current letter tiles into the primary field. If you are holding a blank tile, type a question mark (?) as your wildcard placeholder.</p>
+            <p>Utilize the advanced parameters to instantly filter calculations. Narrow down word lists by specifying precise starting letters, trailing variants, or exact length allocations to match open slots across your gaming board layout.</p>
+        </div>
+
+        <div class="seo-section">
+            <h2>Top High-Scoring Scrabble Words Guide</h2>
+            <p>Maximizing point yields requires a tactical emphasis on high-value letter configurations. Consonants like <strong>Q</strong> and <strong>Z</strong> grant a baseline score of 10 points each, while <strong>J</strong> and <strong>X</strong> command 8 points. Memorizing key shorthand lists is a proven tournament technique:</p>
+            <ul>
+                <li><strong>High-Value 2-Letter Words:</strong> AX (9 pts), XI (9 pts), OX (9 pts), EX (9 pts), JO (9 pts), ZA (11 pts).</li>
+                <li><strong>Words with Q without U:</strong> QI, QAID, QAT, QOPH, FAQIR.</li>
+                <li><strong>Dynamic J-Groupings:</strong> JAZZ, JINX, JUMP, JAW, QUERY.</li>
+            </ul>
+        </div>
+
+        <div class="seo-section">
+            <h2>Wordle Daily Hint Companion</h2>
+            <p>If you are stuck trying to preserve your daily puzzle streak, using a rule-based letter unscrambler lets you review viable choices without spoiling the answer completely. Simply isolate known valid green letters using our "Starts With" filter, or input orange matching configurations directly into the main matrix pool to keep your workflow optimal.</p>
+        </div>
+    </div>
+
+    <hr style="border:0; border-top:1px solid #eee; margin:40px 0;">
+    <footer><small style="color:#bbb; display:block; text-align:center;">Centurion Content Core // GitHub Utility Node</small></footer>
 </div>
 
 <script>
-    // Built-in English Dictionary Array (Expandable)
+    // Expanded Dictionary Array containing high-scoring words and puzzle staples
     const dictionary = [
-        "all", "am", "as", "at", "ball", "bat", "beta", "cat", "call", "came", "code", "data", "dog", "eat", "each", "fast", "game", "gate", "has", "hate", "have", "hub", "it", "is", "java", "lama", "llama", "loam", "mall", "malo", "me", "meat", "node", "on", "or", "sat", "seat", "set", "share", "sheet", "site", "star", "team", "tech", "the", "them", "to", "up", "us", "valid", "web", "word", "words", "work", "zone",
-        "apple", "about", "alert", "alpha", "basic", "brick", "chart", "click", "cloud", "count", "crypt", "cyber", "drive", "enter", "error", "file", "filter", "found", "graph", "group", "index", "input", "layer", "link", "links", "logic", "loops", "macro", "match", "media", "meta", "model", "net", "network", "nodes", "online", "output", "page", "pages", "panel", "parse", "paste", "ping", "pixel", "pool", "print", "query", "queue", "range", "rate", "result", "route", "scale", "script", "search", "server", "site", "smart", "solve", "source", "stack", "start", "state", "stats", "stream", "string", "tag", "tags", "task", "term", "test", "text", "tool", "tools", "trace", "track", "traffic", "trend", "update", "url", "user", "users", "valid", "value", "verify", "web", "window", "word", "words", "work", "yield", "zone"
+        "all", "am", "as", "at", "ax", "ex", "jo", "ox", "qi", "xi", "za", "ball", "bat", "beta", "cat", "call", "came", "code", "data", "dog", "eat", "each", "fast", "game", "gate", "has", "hate", "have", "hub", "it", "is", "jaw", "java", "jazz", "lama", "llama", "loam", "mall", "malo", "me", "meat", "node", "on", "or", "quiz", "sat", "seat", "set", "share", "sheet", "site", "star", "team", "tech", "the", "them", "to", "up", "us", "valid", "web", "word", "words", "work", "zone",
+        "apple", "about", "alert", "alpha", "apex", "basic", "brick", "chart", "click", "cloud", "count", "crypt", "cyber", "drive", "enter", "error", "file", "filter", "found", "graph", "group", "index", "input", "jinx", "jump", "layer", "link", "links", "logic", "loops", "macro", "match", "media", "meta", "model", "net", "network", "nodes", "online", "output", "page", "pages", "panel", "parse", "paste", "ping", "pixel", "pool", "print", "qaid", "query", "queue", "range", "rate", "result", "route", "scale", "script", "search", "server", "site", "smart", "solve", "source", "stack", "start", "state", "stats", "stream", "string", "tag", "tags", "task", "term", "test", "text", "tool", "tools", "trace", "track", "traffic", "trend", "update", "url", "user", "users", "valid", "value", "verify", "web", "window", "word", "words", "work", "yield", "zone"
     ];
+
+    // Official Scrabble Tournament Point Values Map
+    const letterScores = {
+        a:1, e:1, i:1, o:1, u:1, l:1, n:1, r:1, s:1, t:1,
+        d:2, g:2,
+        b:3, c:3, m:3, p:3,
+        f:4, h:4, v:4, w:4, y:4,
+        k:5,
+        j:8, x:8,
+        q:10, z:10
+    };
 
     function unscrambleWords() {
         const inputLetters = document.getElementById('letters').value.toLowerCase().replace(/[^a-z?]/g, '');
@@ -119,26 +165,29 @@ https://disintegratehesitate.com/ycep8j7etx?key=2f03aaf523a80ed390a722017a85b5b9
         let matchedWords = [];
 
         for (let word of dictionary) {
-            // Filter by Length
+            // 1. Length Filter
             if (wordLength !== 'any' && word.length !== parseInt(wordLength)) continue;
-            // Filter by Starts With
+            // 2. Starts With Filter
             if (startsWith && !word.startsWith(startsWith)) continue;
-            // Filter by Ends With
+            // 3. Ends With Filter
             if (endsWith && !word.endsWith(endsWith)) continue;
 
-            // Anagram Matching Logic
+            // 4. Letter Matching and Point Calculation Routine
             let lettersCopy = inputLetters.split('');
             let isMatch = true;
+            let currentWordScore = 0;
 
             for (let char of word) {
                 let index = lettersCopy.indexOf(char);
                 if (index !== -1) {
                     lettersCopy.splice(index, 1);
+                    currentWordScore += letterScores[char] || 0; // Standard letter points
                 } else {
-                    // Check for blank wildcard "?"
+                    // Fall back to check for a blank wildcard "?" tile
                     let blankIndex = lettersCopy.indexOf('?');
                     if (blankIndex !== -1) {
                         lettersCopy.splice(blankIndex, 1);
+                        // Wildcard tiles count as 0 points in standard Scrabble
                     } else {
                         isMatch = false;
                         break;
@@ -146,23 +195,29 @@ https://disintegratehesitate.com/ycep8j7etx?key=2f03aaf523a80ed390a722017a85b5b9
                 }
             }
 
-            if (isMatch) matchedWords.push(word);
+            if (isMatch) {
+                matchedWords.push({ word: word, score: currentWordScore });
+            }
         }
 
-        // Display Output Results
+        // Display results block
         resultsBox.style.display = 'block';
+        
         if (matchedWords.length > 0) {
-            resultsCountElement.textContent = `Found ${matchedWords.length} valid matching words:`;
-            matchedWords.sort((a, b) => b.length - a.length); // Longest words first
-            for (let match of matchedWords) {
+            resultsCountElement.textContent = `Found ${matchedWords.length} valid matching words (Sorted by score):`;
+            
+            // Sort by highest score first. If tied, sort by length.
+            matchedWords.sort((a, b) => b.score - a.score || b.word.length - a.word.length);
+            
+            for (let item of matchedWords) {
                 let li = document.createElement('li');
                 li.className = 'word-item';
-                li.textContent = match;
+                li.innerHTML = `${item.word} <span class="word-score">${item.score} pts</span>`;
                 wordListElement.appendChild(li);
             }
         } else {
             resultsCountElement.textContent = 'No Matches Found';
-            wordListElement.innerHTML = '<li class="no-results">Try adding more letters or using alternative filter parameters.</li>';
+            wordListElement.innerHTML = '<li class="no-results">Try expanding your letter input array or resetting filter rules.</li>';
         }
     }
 </script>
