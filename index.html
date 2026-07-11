@@ -1,36 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI & Automation Systems Hub</title>
+    <title>Word Unscrambler - Free Scrabble & Anagram Solver</title>
     
+    <!-- 🎯 Your Verified Google Search Console Tags -->
     <meta name="google-site-verification" content="U455DonUJAOCefDh-OQZSkIFTChGrfEloi90LxmJT70" />
     <meta name="google-site-verification" content="tHZ68LAUwohZSEn3MLV3l-fP5ljM5eDKkdyCgOJ9WpU" />
 
+    <!-- 🚨 PLACE YOUR ADSTERRA SOCIAL BAR SCRIPT TAG DIRECTLY BELOW THIS LINE -->
+    <!-- [Paste Social Bar Code Here] -->
+
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 40px 20px; color: #222; background: #fafafa; line-height: 1.8; }
-        .container { max-width: 700px; margin: 0 auto; background: #fff; padding: 45px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); text-align: center; }
-        h1 { font-size: 2.4em; color: #111; font-weight: 800; margin-bottom: 25px; }
-        p { font-size: 1.15em; color: #444; margin-bottom: 30px; text-align: left; }
-        .monetize-btn { display: inline-block; background: #007bff; color: #fff; padding: 16px 32px; font-size: 1.2em; font-weight: bold; text-decoration: none; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,123,255,0.3); margin: 20px 0; transition: transform 0.2s; }
-        .monetize-btn:hover { transform: translateY(-2px); background: #0056b3; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 30px 15px; color: #222; background: #f0f2f5; margin: 0; }
+        .container { max-width: 650px; margin: 0 auto; background: #fff; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        h1 { font-size: 2.1em; color: #1a202c; margin-bottom: 5px; font-weight: 800; text-align: center; }
+        .subtitle { color: #718096; text-align: center; margin-bottom: 30px; font-size: 1em; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; color: #4a5568; font-size: 0.95em; }
+        input[type="text"], select { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; box-sizing: border-box; font-size: 1.1em; transition: border-color 0.2s; }
+        input[type="text"]:focus { border-color: #3182ce; outline: none; }
+        .filters { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 25px; }
+        .btn-solve { width: 100%; background: #3182ce; color: #fff; padding: 14px; font-size: 1.2em; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 12px rgba(49,130,206,0.3); transition: background 0.2s; }
+        .btn-solve:hover { background: #2b6cb0; }
+        .results-box { margin-top: 30px; display: none; }
+        .results-header { font-size: 1.2em; font-weight: 700; margin-bottom: 15px; border-bottom: 2px solid #edf2f7; padding-bottom: 8px; color: #2d3748; }
+        .word-list { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
+        .word-item { background: #ebf8ff; color: #2b6cb0; padding: 8px 14px; border-radius: 6px; font-weight: 600; font-size: 1.05em; border: 1px solid #bee3f8; }
+        .no-results { color: #e53e3e; font-weight: 600; }
+        
+        /* Premium Monetization CTA Block */
+        .promo-banner { margin-top: 40px; background: linear-gradient(135deg, #2c3e50, #3498db); color: #fff; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .promo-banner h3 { margin: 0 0 10px 0; font-size: 1.4em; }
+        .promo-banner p { margin: 0 0 20px 0; font-size: 0.95em; opacity: 0.9; }
+        .promo-btn { display: inline-block; background: #e74c3c; color: white; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 6px; box-shadow: 0 4px 10px rgba(231,76,60,0.4); transition: transform 0.2s; }
+        .promo-btn:hover { transform: translateY(-1px); background: #c0392b; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Advanced AI Automation Workflows</h1>
-        
-        <p>Integrating artificial intelligence into routine operations allows business systems to optimize processes, scale data pipelines, and eliminate operational bottlenecks dynamically. Click below to access our distributed computing nodes and start optimizing your automated loops immediately.</p>
-        
-        <a href="https://www.effectivecpmnetwork.com/ycep8j7etx?key=2f03aaf523a80ed390a722017a85b5b9" target="_blank" class="monetize-btn">
-            🚀 Access Node Control Center
-        </a>
-        
-        <p style="margin-top: 30px;">Modern setups focus heavily on rule-based processing, API integration, and large language model workflows. These layers work together to digest input data and output structured, actionable assets without manual oversight.</p>
 
-        <hr style="border:0; border-top:1px solid #eee; margin:40px 0;">
-        <footer><small style="color:#bbb;">Centurion Content Core // GitHub Production Node</small></footer>
+<div class="container">
+    <h1>Word Unscrambler</h1>
+    <div class="subtitle">Decode jumbled letters into high-scoring Scrabble & Words with Friends solutions</div>
+    
+    <div class="input-group">
+        <label for="letters">Enter Your Letters (Use ? for blanks)</label>
+        <input type="text" id="letters" placeholder="e.g., oallm, tehas" autocomplete="off">
     </div>
+    
+    <div class="filters">
+        <div>
+            <label for="startsWith">Starts With</label>
+            <input type="text" id="startsWith" placeholder="e.g., m" maxlength="1">
+        </div>
+        <div>
+            <label for="endsWith">Ends With</label>
+            <input type="text" id="endsWith" placeholder="e.g., s" maxlength="1">
+        </div>
+        <div>
+            <label for="wordLength">Length</label>
+            <select id="wordLength">
+                <option value="any">Any Length</option>
+                <option value="3">3 Letters</option>
+                <option value="4">4 Letters</option>
+                <option value="5">5 Letters</option>
+                <option value="6">6 Letters</option>
+                <option value="7">7 Letters</option>
+            </select>
+        </div>
+    </div>
+    
+    <button class="btn-solve" onclick="unscrambleWords()">🚀 Unscramble Letters</button>
+    
+    <div class="results-box" id="resultsBox">
+        <div class="results-header" id="resultsCount">Valid Words Found</div>
+        <ul class="word-list" id="wordList"></ul>
+    </div>
+
+    <!-- SmartLink Monetization Fallback Layer -->
+    <div class="promo-banner">
+        <h3>Need the Wordle Solution Instantly?</h3>
+        <p>Access our cloud computing backend database to cross-reference every active daily anagram dictionary path automatically.</p>
+        <a href="https://www.effectivecpmnetwork.com/ycep8j7etx?key=2f03aaf523a80ed390a722017a85b5b9" target="_blank" class="promo-btn">
+            ⚡ Open Master Dictionary Engine
+        </a>
+    </div>
+</div>
+
+<script>
+    // Built-in English Dictionary Array (Expandable)
+    const dictionary = [
+        "all", "am", "as", "at", "ball", "bat", "beta", "cat", "call", "came", "code", "data", "dog", "eat", "each", "fast", "game", "gate", "has", "hate", "have", "hub", "it", "is", "java", "lama", "llama", "loam", "mall", "malo", "me", "meat", "node", "on", "or", "sat", "seat", "set", "share", "sheet", "site", "star", "team", "tech", "the", "them", "to", "up", "us", "valid", "web", "word", "words", "work", "zone",
+        "apple", "about", "alert", "alpha", "basic", "brick", "chart", "click", "cloud", "count", "crypt", "cyber", "drive", "enter", "error", "file", "filter", "found", "graph", "group", "index", "input", "layer", "link", "links", "logic", "loops", "macro", "match", "media", "meta", "model", "net", "network", "nodes", "online", "output", "page", "pages", "panel", "parse", "paste", "ping", "pixel", "pool", "print", "query", "queue", "range", "rate", "result", "route", "scale", "script", "search", "server", "site", "smart", "solve", "source", "stack", "start", "state", "stats", "stream", "string", "tag", "tags", "task", "term", "test", "text", "tool", "tools", "trace", "track", "traffic", "trend", "update", "url", "user", "users", "valid", "value", "verify", "web", "window", "word", "words", "work", "yield", "zone"
+    ];
+
+    function unscrambleWords() {
+        const inputLetters = document.getElementById('letters').value.toLowerCase().replace(/[^a-z?]/g, '');
+        const startsWith = document.getElementById('startsWith').value.toLowerCase();
+        const endsWith = document.getElementById('endsWith').value.toLowerCase();
+        const wordLength = document.getElementById('wordLength').value;
+        
+        const resultsBox = document.getElementById('resultsBox');
+        const wordListElement = document.getElementById('wordList');
+        const resultsCountElement = document.getElementById('resultsCount');
+        
+        wordListElement.innerHTML = '';
+        
+        if (!inputLetters) {
+            alert('Please enter some letters to unscramble.');
+            return;
+        }
+
+        let matchedWords = [];
+
+        for (let word of dictionary) {
+            // Filter by Length
+            if (wordLength !== 'any' && word.length !== parseInt(wordLength)) continue;
+            // Filter by Starts With
+            if (startsWith && !word.startsWith(startsWith)) continue;
+            // Filter by Ends With
+            if (endsWith && !word.endsWith(endsWith)) continue;
+
+            // Anagram Matching Logic
+            let lettersCopy = inputLetters.split('');
+            let isMatch = true;
+
+            for (let char of word) {
+                let index = lettersCopy.indexOf(char);
+                if (index !== -1) {
+                    lettersCopy.splice(index, 1);
+                } else {
+                    // Check for blank wildcard "?"
+                    let blankIndex = lettersCopy.indexOf('?');
+                    if (blankIndex !== -1) {
+                        lettersCopy.splice(blankIndex, 1);
+                    } else {
+                        isMatch = false;
+                        break;
+                    }
+                }
+            }
+
+            if (isMatch) matchedWords.push(word);
+        }
+
+        // Display Output Results
+        resultsBox.style.display = 'block';
+        if (matchedWords.length > 0) {
+            resultsCountElement.textContent = `Found ${matchedWords.length} valid matching words:`;
+            matchedWords.sort((a, b) => b.length - a.length); // Longest words first
+            for (let match of matchedWords) {
+                let li = document.createElement('li');
+                li.className = 'word-item';
+                li.textContent = match;
+                wordListElement.appendChild(li);
+            }
+        } else {
+            resultsCountElement.textContent = 'No Matches Found';
+            wordListElement.innerHTML = '<li class="no-results">Try adding more letters or using alternative filter parameters.</li>';
+        }
+    }
+</script>
+
 </body>
 </html>
