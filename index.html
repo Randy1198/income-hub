@@ -3,127 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Unscrambler - Free Scrabble & Anagram Solver</title>
+    <title>Multi-Tool Hub - Word Unscrambler, Crossword Solver & Crypto Calculator</title>
     
     <!-- 🎯 Your Verified Google Search Console Tags -->
     <meta name="google-site-verification" content="U455DonUJAOCefDh-OQZSkIFTChGrfEloi90LxmJT70" />
     <meta name="google-site-verification" content="tHZ68LAUwohZSEn3MLV3l-fP5ljM5eDKkdyCgOJ9WpU" />
+    
+    <!-- 🏢 Google AdSense Account Association Tag -->
     <meta name="google-adsense-account" content="ca-pub-8712139791759998">
-    <!-- 🚨 ADSTERRA SOCIAL BAR SCRIPT (Perfectly Positioned) -->
+
+    <!-- 🚨 ADSTERRA SOCIAL BAR SCRIPT -->
     <script src="https://disintegratehesitate.com/a0/34/14/a03414968dfa3f97f69bf4c5e40dfa30.js"></script>
 
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 30px 15px; color: #222; background: #f0f2f5; margin: 0; line-height: 1.6; }
-        .container { max-width: 650px; margin: 0 auto; background: #fff; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-        h1 { font-size: 2.1em; color: #1a202c; margin-bottom: 5px; font-weight: 800; text-align: center; }
-        .subtitle { color: #718096; text-align: center; margin-bottom: 30px; font-size: 1em; }
-        .input-group { margin-bottom: 20px; }
-        label { display: block; font-weight: 600; margin-bottom: 8px; color: #4a5568; font-size: 0.95em; }
-        input[type="text"], select { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; box-sizing: border-box; font-size: 1.1em; transition: border-color 0.2s; }
-        input[type="text"]:focus { border-color: #3182ce; outline: none; }
-        .filters { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 25px; }
-        .btn-solve { width: 100%; background: #3182ce; color: #fff; padding: 14px; font-size: 1.2em; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 12px rgba(49,130,206,0.3); transition: background 0.2s; }
-        .btn-solve:hover { background: #2b6cb0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 20px 15px; color: #222; background: #f0f2f5; margin: 0; line-height: 1.6; }
+        .container { max-width: 650px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        h1 { font-size: 2em; color: #1a202c; margin-bottom: 5px; font-weight: 800; text-align: center; }
+        .subtitle { color: #718096; text-align: center; margin-bottom: 25px; font-size: 0.95em; }
         
-        .results-box { margin-top: 30px; display: none; }
-        .results-header { font-size: 1.2em; font-weight: 700; margin-bottom: 15px; border-bottom: 2px solid #edf2f7; padding-bottom: 8px; color: #2d3748; }
-        .word-list { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
-        .word-item { background: #ebf8ff; color: #2b6cb0; padding: 8px 14px; border-radius: 6px; font-weight: 600; font-size: 1.05em; border: 1px solid #bee3f8; display: flex; gap: 8px; align-items: center; }
-        .word-score { background: #3182ce; color: white; font-size: 0.75em; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
-        .no-results { color: #e53e3e; font-weight: 600; }
+        /* Navigation Tabs Layout */
+        .tabs { display: flex; gap: 8px; margin-bottom: 25px; border-bottom: 2px solid #edf2f7; padding-bottom: 10px; overflow-x: auto; }
+        .tab-btn { background: #e2e8f0; color: #4a5568; padding: 10px 16px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9em; white-space: nowrap; transition: all 0.2s; }
+        .tab-btn.active { background: #3182ce; color: #fff; }
+        .tool-content { display: none; }
+        .tool-content.active { display: block; }
+
+        /* Global Form elements */
+        .input-group { margin-bottom: 18px; text-align: left; }
+        label { display: block; font-weight: 600; margin-bottom: 6px; color: #4a5568; font-size: 0.9em; }
+        input[type="text"], input[type="number"], select { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; box-sizing: border-box; font-size: 1.05em; transition: border-color 0.2s; }
+        input:focus, select:focus { border-color: #3182ce; outline: none; }
+        .filters { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .btn-action { width: 100%; background: #3182ce; color: #fff; padding: 14px; font-size: 1.1em; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 12px rgba(49,130,206,0.3); transition: background 0.2s; }
+        .btn-action:hover { background: #2b6cb0; }
         
-        .promo-banner { margin-top: 40px; background: linear-gradient(135deg, #2c3e50, #3498db); color: #fff; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .promo-banner h3 { margin: 0 0 10px 0; font-size: 1.4em; }
-        .promo-banner p { margin: 0 0 20px 0; font-size: 0.95em; opacity: 0.9; }
-        .promo-btn { display: inline-block; background: #e74c3c; color: white; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 6px; box-shadow: 0 4px 10px rgba(231,76,60,0.4); transition: transform 0.2s; }
+        /* Output Results Area */
+        .results-box { margin-top: 25px; display: none; border-top: 2px solid #edf2f7; padding-top: 20px; }
+        .results-header { font-size: 1.1em; font-weight: 700; margin-bottom: 12px; color: #2d3748; }
+        .word-list { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; margin: 0; }
+        .word-item { background: #ebf8ff; color: #2b6cb0; padding: 6px 12px; border-radius: 6px; font-weight: 600; font-size: 1em; border: 1px solid #bee3f8; display: flex; gap: 6px; align-items: center; }
+        .word-score { background: #3182ce; color: white; font-size: 0.75em; padding: 2px 5px; border-radius: 4px; }
+        .no-results { color: #e53e3e; font-weight: 600; list-style: none; }
+        
+        /* Financial Output Grid Display */
+        .crypto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px; }
+        .crypto-card { background: #f7fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; text-align: left; }
+        .crypto-card h4 { margin: 0 0 5px 0; color: #718096; font-size: 0.85em; text-transform: uppercase; }
+        .crypto-card p { margin: 0; font-size: 1.2em; font-weight: 700; color: #2d3748; }
+        .crypto-card.profit { background: #f0fff4; border-color: #c6f6d5; }
+        .crypto-card.profit p { color: #38a169; }
+
+        /* Monetization CTA Placement */
+        .promo-banner { margin-top: 35px; background: linear-gradient(135deg, #2c3e50, #3498db); color: #fff; padding: 22px; border-radius: 10px; text-align: center; }
+        .promo-banner h3 { margin: 0 0 8px 0; font-size: 1.3em; }
+        .promo-banner p { margin: 0 0 15px 0; font-size: 0.9em; opacity: 0.9; }
+        .promo-btn { display: inline-block; background: #e74c3c; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 6px; transition: transform 0.2s; box-shadow: 0 4px 10px rgba(231,76,60,0.3); }
         .promo-btn:hover { transform: translateY(-1px); background: #c0392b; }
 
-        .seo-content { margin-top: 50px; border-top: 2px solid #edf2f7; padding-top: 30px; color: #4a5568; }
-        .seo-section { margin-bottom: 30px; }
-        .seo-section h2 { font-size: 1.3em; color: #1a202c; font-weight: 700; margin-bottom: 10px; }
-        .seo-section p { font-size: 0.95em; margin: 0 0 10px 0; text-align: left; }
-        .seo-section ul { padding-left: 20px; font-size: 0.95em; }
-        .seo-section li { margin-bottom: 5px; }
+        /* Comprehensive SEO Content */
+        .seo-content { margin-top: 45px; border-top: 2px solid #edf2f7; padding-top: 25px; color: #4a5568; text-align: left; }
+        .seo-section { margin-bottom: 25px; }
+        .seo-section h2 { font-size: 1.2em; color: #1a202c; font-weight: 700; margin-bottom: 8px; }
+        .seo-section p { font-size: 0.9em; margin: 0 0 10px 0; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Word Unscrambler</h1>
-    <div class="subtitle">Decode jumbled letters into high-scoring Scrabble & Words with Friends solutions</div>
+    <h1>Advanced Web Utility Node</h1>
+    <div class="subtitle">Access decentralized computation, encryption modules, and linguistic tools</div>
     
-    <div class="input-group">
-        <label for="letters">Enter Your Letters (Use ? for blank tiles)</label>
-        <input type="text" id="letters" placeholder="e.g., oallm, jzaz, tehas" autocomplete="off">
+    <!-- Navigation Tabs Menu System -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTool('unscrambler', this)">🔤 Word Unscrambler</button>
+        <button class="tab-btn" onclick="openTool('crossword', this)">🧩 Crossword Solver</button>
+        <button class="tab-btn" onclick="openTool('crypto', this)">🪙 Crypto Profit Calc</button>
     </div>
-    
-    <div class="filters">
-        <div>
-            <label for="startsWith">Starts With</label>
-            <input type="text" id="startsWith" placeholder="e.g., m" maxlength="1">
+
+    <!-- MODULE 1: WORD UNSCRAMBLER -->
+    <div id="unscrambler" class="tool-content active">
+        <div class="input-group">
+            <label for="letters">Enter Letters (Use ? for blank wildcards)</label>
+            <input type="text" id="letters" placeholder="e.g., oallm, jzaz" autocomplete="off">
         </div>
-        <div>
-            <label for="endsWith">Ends With</label>
-            <input type="text" id="endsWith" placeholder="e.g., s" maxlength="1">
+        <div class="filters">
+            <div>
+                <label for="startsWith">Starts With</label>
+                <input type="text" id="startsWith" placeholder="e.g., m" maxlength="1">
+            </div>
+            <div>
+                <label for="endsWith">Ends With</label>
+                <input type="text" id="endsWith" placeholder="e.g., s" maxlength="1">
+            </div>
+            <div>
+                <label for="wordLength">Length</label>
+                <select id="wordLength">
+                    <option value="any">Any</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
         </div>
-        <div>
-            <label for="wordLength">Length</label>
-            <select id="wordLength">
-                <option value="any">Any Length</option>
-                <option value="2">2 Letters</option>
-                <option value="3">3 Letters</option>
-                <option value="4">4 Letters</option>
-                <option value="5">5 Letters</option>
-                <option value="6">6 Letters</option>
-                <option value="7">7 Letters</option>
-            </select>
+        <button class="btn-action" onclick="unscrambleWords()">🚀 Run Unscramble Routine</button>
+    </div>
+
+    <!-- MODULE 2: CROSSWORD PATTERN SOLVER -->
+    <div id="crossword" class="tool-content">
+        <div class="input-group">
+            <label for="crosswordPattern">Enter Pattern (Use underscores _ or ? for unknown spaces)</label>
+            <input type="text" id="crosswordPattern" placeholder="e.g., c_d_ to find 'code', or _l_e_t" autocomplete="off">
+        </div>
+        <button class="btn-action" onclick="solveCrossword()">🧩 Execute Crossword Search</button>
+    </div>
+
+    <!-- MODULE 3: CRYPTO PROFIT CALCULATOR -->
+    <div id="crypto" class="tool-content">
+        <div class="filters" style="grid-template-columns: 1fr 1fr; margin-bottom: 12px;">
+            <div class="input-group" style="margin-bottom:0;">
+                <label for="buyPrice">Buy Price ($ USD)</label>
+                <input type="number" id="buyPrice" placeholder="0.00" step="any">
+            </div>
+            <div class="input-group" style="margin-bottom:0;">
+                <label for="sellPrice">Sell Price ($ USD)</label>
+                <input type="number" id="sellPrice" placeholder="0.00" step="any">
+            </div>
+        </div>
+        <div class="filters" style="grid-template-columns: 1fr 1fr; margin-bottom: 15px;">
+            <div class="input-group" style="margin-bottom:0;">
+                <label for="coinAmount">Quantity Held</label>
+                <input type="number" id="coinAmount" placeholder="e.g., 250" step="any">
+            </div>
+            <div class="input-group" style="margin-bottom:0;">
+                <label for="gasFee">Network Gas Estimate ($)</label>
+                <input type="number" id="gasFee" placeholder="e.g., 15.00" value="0">
+            </div>
+        </div>
+        <button class="btn-action" onclick="calculateCrypto()">🪙 Parse Ledger Margins</button>
+        
+        <div class="crypto-grid" id="cryptoResults" style="display:none;">
+            <div class="crypto-card">
+                <h4>Total Investment</h4>
+                <p id="calcCost">$0.00</p>
+            </div>
+            <div class="crypto-card">
+                <h4>Gross Balance</h4>
+                <p id="calcGross">$0.00</p>
+            </div>
+            <div class="crypto-card profit" id="profitCard">
+                <h4>Net Take-Home Yield</h4>
+                <p id="calcNet">$0.00</p>
+            </div>
+            <div class="crypto-card" id="roiCard">
+                <h4>ROI Margin</h4>
+                <p id="calcRoi">0.00%</p>
+            </div>
         </div>
     </div>
-    
-    <button class="btn-solve" onclick="unscrambleWords()">🚀 Unscramble Letters</button>
-    
+
+    <!-- Dynamic Output Area for Word Modules -->
     <div class="results-box" id="resultsBox">
-        <div class="results-header" id="resultsCount">Valid Words Found</div>
+        <div class="results-header" id="resultsCount">Valid Matches Found</div>
         <ul class="word-list" id="wordList"></ul>
     </div>
 
     <!-- ⚡ SMARTLINK EMBEDDED DIRECTLY INTO BUTTON TARGET -->
     <div class="promo-banner">
-        <h3>Looking for Today's Wordle Answer?</h3>
-        <p>Access our real-time global word tracking nodes to instantly bypass puzzle roadblocks and extract daily challenge variations.</p>
+        <h3>Looking for Today's Wordle or Blockchain Updates?</h3>
+        <p>Access our real-time global tracking nodes to instantly bypass pipeline roadblocks and view hidden algorithmic configurations.</p>
         <a href="https://disintegratehesitate.com/ycep8j7etx?key=2f03aaf523a80ed390a722017a85b5b9" target="_blank" class="promo-btn">
-            ⚡ Open Master Dictionary Engine
+            ⚡ Open Master Analytics Core
         </a>
     </div>
 
+    <!-- 🌐 STRATEGIC GOOGLE SEO HEADINGS BLOCK -->
     <div class="seo-content">
         <div class="seo-section">
-            <h2>How to Use the Free Word Unscrambler</h2>
-            <p>Our online anagram solver makes it incredibly easy to find winning configurations for Scrabble, Words with Friends, and daily word puzzles. Simply input your current letter tiles into the primary field. If you are holding a blank tile, type a question mark (?) as your wildcard placeholder.</p>
-            <p>Utilize the advanced parameters to instantly filter calculations. Narrow down word lists by specifying precise starting letters, trailing variants, or exact length allocations to match open slots across your gaming board layout.</p>
+            <h2>Multi-Functional Anagram & Crossword Solver Engine</h2>
+            <p>Our online utility hub provides fast calculations for word puzzle enthusiasts and crossword puzzle solvers. If you need to unscramble a set of random tiles for board games, the primary module scans standard dictionaries instantly. For missing letters in complex puzzle layouts, our crossword solver lets you input structured parameters using placeholders to identify compatible solutions matching your parameters.</p>
         </div>
-
         <div class="seo-section">
-            <h2>Top High-Scoring Scrabble Words Guide</h2>
-            <p>Maximizing point yields requires a tactical emphasis on high-value letter configurations. Consonants like <strong>Q</strong> and <strong>Z</strong> grant a baseline score of 10 points each, while <strong>J</strong> and <strong>X</strong> command 8 points. Memorizing key shorthand lists is a proven tournament technique:</p>
-            <ul>
-                <li><strong>High-Value 2-Letter Words:</strong> AX (9 pts), XI (9 pts), OX (9 pts), EX (9 pts), JO (9 pts), ZA (11 pts).</li>
-                <li><strong>Words with Q without U:</strong> QI, QAID, QAT, QOPH, FAQIR.</li>
-                <li><strong>Dynamic J-Groupings:</strong> JAZZ, JINX, JUMP, JAW, QUERY.</li>
-            </ul>
-        </div>
-
-        <div class="seo-section">
-            <h2>Wordle Daily Hint Companion</h2>
-            <p>If you are stuck trying to preserve your daily puzzle streak, using a rule-based letter unscrambler lets you review viable choices without spoiling the answer completely. Simply isolate known valid green letters using our "Starts With" filter, or input orange matching configurations directly into the main matrix pool to keep your workflow optimal.</p>
+            <h2>High-Yield Web3 & Cryptocurrency Asset Allocation Tracking</h2>
+            <p>Tracking execution data across automated blockchain networks requires clear visibility into real gross yields and scaling network overhead. Use our crypto calculator configuration to input position baseline indexes, project future target valuations, and subtract estimated transaction gas fees to determine true capital distribution values cleanly.</p>
         </div>
     </div>
 
-    <hr style="border:0; border-top:1px solid #eee; margin:40px 0;">
-    <footer><small style="color:#bbb; display:block; text-align:center;">Centurion Content Core // GitHub Utility Node</small></footer>
+    <hr style="border:0; border-top:1px solid #eee; margin:30px 0;">
+    <footer><small style="color:#bbb; display:block; text-align:center;">Centurion Content Core // Multi-App Production Node</small></footer>
 </div>
 
 <script>
+    // Tab Toggling Functionality
+    function openTool(toolId, element) {
+        const contents = document.getElementsByClassName('tool-content');
+        for (let content of contents) { content.classList.remove('active'); }
+        
+        const tabs = document.getElementsByClassName('tab-btn');
+        for (let tab of tabs) { tab.classList.remove('active'); }
+        
+        document.getElementById(toolId).classList.add('active');
+        element.classList.add('active');
+        
+        // Hide global text results if shifting layout views
+        if (toolId === 'crypto') {
+            document.getElementById('resultsBox').style.display = 'none';
+        } else {
+            document.getElementById('cryptoResults').style.display = 'none';
+        }
+    }
+
     const dictionary = [
         "all", "am", "as", "at", "ax", "ex", "jo", "ox", "qi", "xi", "za", "ball", "bat", "beta", "cat", "call", "came", "code", "data", "dog", "eat", "each", "fast", "game", "gate", "has", "hate", "have", "hub", "it", "is", "jaw", "java", "jazz", "lama", "llama", "loam", "mall", "malo", "me", "meat", "node", "on", "or", "quiz", "sat", "seat", "set", "share", "sheet", "site", "star", "team", "tech", "the", "them", "to", "up", "us", "valid", "web", "word", "words", "work", "zone",
         "apple", "about", "alert", "alpha", "apex", "basic", "brick", "chart", "click", "cloud", "count", "crypt", "cyber", "drive", "enter", "error", "file", "filter", "found", "graph", "group", "index", "input", "jinx", "jump", "layer", "link", "links", "logic", "loops", "macro", "match", "media", "meta", "model", "net", "network", "nodes", "online", "output", "page", "pages", "panel", "parse", "paste", "ping", "pixel", "pool", "print", "qaid", "query", "queue", "range", "rate", "result", "route", "scale", "script", "search", "server", "site", "smart", "solve", "source", "stack", "start", "state", "stats", "stream", "string", "tag", "tags", "task", "term", "test", "text", "tool", "tools", "trace", "track", "traffic", "trend", "update", "url", "user", "users", "valid", "value", "verify", "web", "window", "word", "words", "work", "yield", "zone"
@@ -131,14 +222,10 @@
 
     const letterScores = {
         a:1, e:1, i:1, o:1, u:1, l:1, n:1, r:1, s:1, t:1,
-        d:2, g:2,
-        b:3, c:3, m:3, p:3,
-        f:4, h:4, v:4, w:4, y:4,
-        k:5,
-        j:8, x:8,
-        q:10, z:10
+        d:2, g:2, b:3, c:3, m:3, p:3, f:4, h:4, v:4, w:4, y:4, k:5, j:8, x:8, q:10, z:10
     };
 
+    // Tool 1 Logic: Word Unscrambler
     function unscrambleWords() {
         const inputLetters = document.getElementById('letters').value.toLowerCase().replace(/[^a-z?]/g, '');
         const startsWith = document.getElementById('startsWith').value.toLowerCase();
@@ -150,14 +237,9 @@
         const resultsCountElement = document.getElementById('resultsCount');
         
         wordListElement.innerHTML = '';
-        
-        if (!inputLetters) {
-            alert('Please enter some letters to unscramble.');
-            return;
-        }
+        if (!inputLetters) { alert('Please enter some letters to unscramble.'); return; }
 
         let matchedWords = [];
-
         for (let word of dictionary) {
             if (wordLength !== 'any' && word.length !== parseInt(wordLength)) continue;
             if (startsWith && !word.startsWith(startsWith)) continue;
@@ -176,24 +258,16 @@
                     let blankIndex = lettersCopy.indexOf('?');
                     if (blankIndex !== -1) {
                         lettersCopy.splice(blankIndex, 1);
-                    } else {
-                        isMatch = false;
-                        break;
-                    }
+                    } else { isMatch = false; break; }
                 }
             }
-
-            if (isMatch) {
-                matchedWords.push({ word: word, score: currentWordScore });
-            }
+            if (isMatch) matchedWords.push({ word: word, score: currentWordScore });
         }
 
         resultsBox.style.display = 'block';
-        
         if (matchedWords.length > 0) {
-            resultsCountElement.textContent = `Found ${matchedWords.length} valid matching words (Sorted by score):`;
+            resultsCountElement.textContent = `Found ${matchedWords.length} valid choices (Sorted by score):`;
             matchedWords.sort((a, b) => b.score - a.score || b.word.length - a.word.length);
-            
             for (let item of matchedWords) {
                 let li = document.createElement('li');
                 li.className = 'word-item';
@@ -202,8 +276,77 @@
             }
         } else {
             resultsCountElement.textContent = 'No Matches Found';
-            wordListElement.innerHTML = '<li class="no-results">Try expanding your letter input array or resetting filter rules.</li>';
+            wordListElement.innerHTML = '<li class="no-results">No dictionary listings match your parameters.</li>';
         }
+    }
+
+    // Tool 2 Logic: Crossword Blank Finder
+    function solveCrossword() {
+        const pattern = document.getElementById('crosswordPattern').value.toLowerCase().trim();
+        const resultsBox = document.getElementById('resultsBox');
+        const wordListElement = document.getElementById('wordList');
+        const resultsCountElement = document.getElementById('resultsCount');
+        
+        wordListElement.innerHTML = '';
+        if (!pattern) { alert('Please enter a pattern string (e.g., c_d_).'); return; }
+
+        let matchedWords = [];
+        for (let word of dictionary) {
+            if (word.length !== pattern.length) continue;
+            let isMatch = true;
+            for (let i = 0; i < word.length; i++) {
+                let pChar = pattern[i];
+                if (pChar !== '_' && pChar !== '?' && pChar !== word[i]) {
+                    isMatch = false;
+                    break;
+                }
+            }
+            if (isMatch) matchedWords.push(word);
+        }
+
+        resultsBox.style.display = 'block';
+        if (matchedWords.length > 0) {
+            resultsCountElement.textContent = `Found ${matchedWords.length} crossword pattern matches:`;
+            for (let word of matchedWords) {
+                let li = document.createElement('li');
+                li.className = 'word-item';
+                li.textContent = word;
+                wordListElement.appendChild(li);
+            }
+        } else {
+            resultsCountElement.textContent = 'No Matrix Matches';
+            wordListElement.innerHTML = '<li class="no-results">No words match that specific character layout structure.</li>';
+        }
+    }
+
+    // Tool 3 Logic: Financial Crypto Margin Calculator
+    function calculateCrypto() {
+        const buyPrice = parseFloat(document.getElementById('buyPrice').value) || 0;
+        const sellPrice = parseFloat(document.getElementById('sellPrice').value) || 0;
+        const coinAmount = parseFloat(document.getElementById('coinAmount').value) || 0;
+        const gasFee = parseFloat(document.getElementById('gasFee').value) || 0;
+        
+        const totalCost = buyPrice * coinAmount;
+        const grossReturn = sellPrice * coinAmount;
+        const netProfit = grossReturn - totalCost - gasFee;
+        const roi = totalCost > 0 ? (netProfit / totalCost) * 100 : 0;
+        
+        document.getElementById('calcCost').textContent = `$${totalCost.toFixed(2)}`;
+        document.getElementById('calcGross').textContent = `$${grossReturn.toFixed(2)}`;
+        document.getElementById('calcNet').textContent = `$${netProfit.toFixed(2)}`;
+        document.getElementById('calcRoi').textContent = `${roi.toFixed(2)}%`;
+        
+        const profitCard = document.getElementById('profitCard');
+        if (netProfit >= 0) {
+            profitCard.className = 'crypto-card profit';
+        } else {
+            profitCard.className = 'crypto-card';
+            profitCard.style.backgroundColor = '#fff5f5';
+            profitCard.style.borderColor = '#fed7d7';
+            document.getElementById('calcNet').style.color = '#e53e3e';
+        }
+        
+        document.getElementById('cryptoResults').style.display = 'grid';
     }
 </script>
 
